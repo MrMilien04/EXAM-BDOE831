@@ -8,8 +8,8 @@ services:
       - cluster-network-spark
     environment:
       POSTGRES_PASSWORD: superpassword
-      POSTGRES_DB: flight_stats
-      POSTGRES_USER: flight_user
+      POSTGRES_DB: BDOE831
+      POSTGRES_USER: atelier
     volumes:
       - "./db/:/docker-entrypoint-initdb.d"
 
