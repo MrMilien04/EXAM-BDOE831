@@ -86,8 +86,21 @@ services:
     networks:
       - cluster-network-spark
 
+  dataiku:
+    image: dataiku/dss:latest
+    ports:
+      - "10000:10000"
+    volumes:
+      - dataiku_data:/home/dataiku/dss
+    networks:
+      - cluster-network-spark
+    depends_on:
+      - postgresdb
+      - datalake
+
 volumes:
   data_lake:
+  dataiku_data:
 
 networks:
   cluster-network-spark:
