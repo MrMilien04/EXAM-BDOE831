@@ -28,7 +28,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    command: /opt/spark/sbin/start-master.sh -h 0.0.0.0 #map volume to customize config
+    command: /opt/spark/sbin/start-master.sh -h 0.0.0.0
     networks:
       - cluster-network-spark
     ports:
@@ -38,6 +38,7 @@ services:
       - SPARK_NO_DAEMONIZE=true
     volumes:
       - "./data_huge/:/tmp/data_huge/"
+      - "./scripts/:/tmp/scripts/"
 
 
   sparkworker01:
